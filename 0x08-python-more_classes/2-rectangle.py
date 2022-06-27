@@ -6,7 +6,12 @@ class Rectangle:
     """Class that defines an empty rectangle module"""
 
     def __init__(self, width: int = 0, height: int = 0) -> None:
-        """Initializer for the class Rectangle"""
+        """Initializer for the class Rectangle.
+        Args:
+            width (int): The width of the new rectangle.
+            height (int): The height of the new rectangle.        
+        """
+
         self.width = width
         self.height = height
 
@@ -48,13 +53,3 @@ class Rectangle:
             return 0
         else:
             return 2 * (self.__height + self.__width)
-
-
-my_rectangle = Rectangle(2, 4)
-print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
-
-print("--")
-
-my_rectangle.width = 10
-my_rectangle.height = 3
-print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
