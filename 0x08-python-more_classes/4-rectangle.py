@@ -67,5 +67,5 @@ class Rectangle:
         return ("".join(rect))
 
     def __repr__(self):
+        """Formal representation of the class Rectangle"""
         return "{self.__class__.__name__}({self.width}, {self.height})".format(self=self)
-
