@@ -5,7 +5,8 @@
 class Rectangle:
     """Class that defines an empty rectangle module"""
 
-    def __init__(self, width: str, height: str) -> None:
+    def __init__(self, width: int = 0, height: int = 0) -> None:
+        """Initializer for the class Rectangle"""
         self.__width = width
         self.__height = height
 
@@ -15,7 +16,7 @@ class Rectangle:
         return self.__width
 
     @width.setter
-    def width(self, value) -> int:
+    def width(self, value: int) -> int:
         """Getter function for the width private attribute"""
         if (isinstance(value, int) == False):
             raise TypeError("width must be an integer")
@@ -29,7 +30,7 @@ class Rectangle:
         return self.__height
 
     @height.setter
-    def height(self, value) -> int:
+    def height(self, value: int) -> int:
         """Getter function for the height private attribute"""
         if (isinstance(value, int) == False):
             raise TypeError("height must be an integer")
