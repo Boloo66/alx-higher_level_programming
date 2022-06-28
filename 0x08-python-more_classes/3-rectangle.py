@@ -5,15 +5,17 @@
 class Rectangle:
     """Class that defines an empty rectangle module"""
 
+    
     def __init__(self, width: int = 0, height: int = 0) -> None:
         """Initializer for the class Rectangle.
         Args:
             width (int): The width of the new rectangle.
-            height (int): The height of the new rectangle.        
+            height (int): The height of the new rectangle.
         """
 
         self.width = width
         self.height = height
+        
 
     @property
     def width(self) -> int:
@@ -23,7 +25,7 @@ class Rectangle:
     @width.setter
     def width(self, value: int) -> int:
         """Getter function for the width private attribute"""
-        if (isinstance(value, int) == False):
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if (value < 0):
             raise ValueError("width must be >= 0")
@@ -37,7 +39,7 @@ class Rectangle:
     @height.setter
     def height(self, value: int) -> int:
         """Getter function for the height private attribute"""
-        if (isinstance(value, int) == False):
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if (value < 0):
             raise ValueError("height must be >= 0")
@@ -65,3 +67,4 @@ class Rectangle:
             if i != self.__height - 1:
                 rect.append("\n")
         return ("".join(rect))
+        
