@@ -5,7 +5,6 @@
 class Rectangle:
     """Class that defines an empty rectangle module"""
 
-    
     def __init__(self, width: int = 0, height: int = 0) -> None:
         """Initializer for the class Rectangle.
         Args:
