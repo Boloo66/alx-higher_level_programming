@@ -9,9 +9,8 @@ class Rectangle:
         """Initializer for the class Rectangle.
         Args:
             width (int): The width of the new rectangle.
-            height (int): The height of the new rectangle.        
+            height (int): The height of the new rectangle.
         """
-
         self.width = width
         self.height = height
 
@@ -23,7 +22,7 @@ class Rectangle:
     @width.setter
     def width(self, value: int) -> int:
         """Getter function for the width private attribute"""
-        if (isinstance(value, int) == False):
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if (value < 0):
             raise ValueError("width must be >= 0")
@@ -37,7 +36,7 @@ class Rectangle:
     @height.setter
     def height(self, value: int) -> int:
         """Getter function for the height private attribute"""
-        if (isinstance(value, int) == False):
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if (value < 0):
             raise ValueError("height must be >= 0")
@@ -68,4 +67,5 @@ class Rectangle:
 
     def __repr__(self):
         """Formal representation of the class Rectangle"""
-        return "{self.__class__.__name__}({self.width}, {self.height})".format(self=self)
+        rect = "{self.__class__.__name__}({self.width},"
+        rect += "{self.height})".format(self=self)
