@@ -2,9 +2,6 @@
 """This is a template for a base geometry class in python"""
 
 
-from typing import Type
-
-
 class BaseGeometry:
     """A class for the BaseGeometry"""
 
