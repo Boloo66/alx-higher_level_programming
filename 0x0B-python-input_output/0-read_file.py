@@ -19,8 +19,3 @@ def read_file(filename=""):
 
     else:
         print(buffer, end="")
-
-
-if __name__ == "__main__":
-    read_file = __import__('0-read_file').read_file
-    read_file("tests/my_file_1.txt")
