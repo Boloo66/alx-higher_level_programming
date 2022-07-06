@@ -5,9 +5,10 @@
 class BaseGeometry:
     """A class for the BaseGeometry"""
 
-    def __init__(self) -> None:
+    def area(self):
         """Empty initializer for class"""
-        pass
+        raise Exception("area() is not implemented")
 
     def __getattribute__(self, __name: str) -> None:
+        """Magic attribute method"""
         raise Exception("area() is not implemented")
