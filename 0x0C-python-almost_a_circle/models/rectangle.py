@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Rectangle module that imports from the base class"""
-from typing import Type
 from base import Base
 
 
