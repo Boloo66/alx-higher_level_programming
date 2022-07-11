@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """Rectangle module that imports from the base class"""
-from optparse import Values
-from re import X
 from base import Base
 
 
@@ -143,21 +141,3 @@ class Rectangle(Base):
                     self.__x = value
                 elif key == "y":
                     self.__y = value
-
-
-if __name__ == "__main__":
-
-    r1 = Rectangle(10, 10, 10, 10)
-    print(r1)
-
-    r1.update(height=1)
-    print(r1)
-
-    r1.update(width=1, x=2)
-    print(r1)
-
-    r1.update(y=1, width=2, x=3, id=89)
-    print(r1)
-
-    r1.update(x=1, height=2, y=3, width=4)
-    print(r1)
