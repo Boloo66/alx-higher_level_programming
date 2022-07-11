@@ -107,6 +107,7 @@ class Rectangle(Base):
                     self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
+        """Updates the attribute of an instance"""
         if args and len(args) != 0:
             if args is None:
                 self.__init__(self.width, self.height, self.x, self.y)
@@ -141,3 +142,11 @@ class Rectangle(Base):
                     self.__x = value
                 elif key == "y":
                     self.__y = value
+
+    def to_dictionary(self):
+        return {
+            "id": self.id,
+            "size": self.width,
+            "x": self.x,
+            "y": self.y
+        }
