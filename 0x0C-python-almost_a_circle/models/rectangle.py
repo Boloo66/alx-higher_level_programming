@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Rectangle module that imports from the base class"""
+from optparse import Values
+from re import X
 from base import Base
 
 
@@ -106,15 +108,56 @@ class Rectangle(Base):
             .format(self.__class__.__name__, self.id,
                     self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
-        for i in range(len(args)):
-            if i == 0:
-                self.id = args[0]
-            if i == 1:
-                self.__width = args[1]
-            if i == 2:
-                self.__height = args[2]
-            if i == 3:
-                self.__x = args[3]
-            if i == 4:
-                self.__y = args[4]
+    def update(self, *args, **kwargs):
+        if args and len(args) != 0:
+            if args is None:
+                self.__init__(self.width, self.height, self.x, self.y)
+
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[0]
+                if i == 1:
+                    self.__width = args[1]
+                if i == 2:
+                    self.__height = args[2]
+                if i == 3:
+                    self.__x = args[3]
+                if i == 4:
+                    self.__y = args[4]
+        if not args and len(kwargs) != 0:
+            for (key, value) in kwargs.items():
+
+                if key == "id":
+                    if value is None:
+
+                        self.__init__(
+                            self.width, self.height, self.x, self.y)
+
+                    else:
+                        self.id = value
+                elif key == "width":
+                    self.__width = value
+                elif key == "height":
+                    self.__height = value
+                elif key == "x":
+                    self.__x = value
+                elif key == "y":
+                    self.__y = value
+
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(10, 10, 10, 10)
+    print(r1)
+
+    r1.update(height=1)
+    print(r1)
+
+    r1.update(width=1, x=2)
+    print(r1)
+
+    r1.update(y=1, width=2, x=3, id=89)
+    print(r1)
+
+    r1.update(x=1, height=2, y=3, width=4)
+    print(r1)
