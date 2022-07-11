@@ -92,25 +92,6 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = y
 
-
-try:
-    Rectangle(10, "2")
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
-
-try:
-    r = Rectangle(10, 2)
-    r.width = -10
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
-
-try:
-    r = Rectangle(10, 2)
-    r.x = {}
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
-
-try:
-    Rectangle(10, 2, 3, -1)
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
+    def area(self):
+        """The area method returns the area of each Rectangle instance"""
+        return self.__height * self.__width
