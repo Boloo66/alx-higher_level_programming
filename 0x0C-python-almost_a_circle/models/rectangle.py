@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Rectangle module that imports from the base class"""
+from re import I
 from base import Base
 
 
@@ -101,4 +102,39 @@ class Rectangle(Base):
             print("#" * self.__width)
 
     def __str__(self):
+        """Informal representation of the class Rectangle"""
         return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__, self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args):
+        for i in range(len(args)):
+            if i == 0:
+                self.id = args[0]
+            if i == 1:
+                self.__width = args[1]
+            if i == 2:
+                self.__height = args[2]
+            if i == 3:
+                self.__x = args[3]
+            if i == 4:
+                self.__y = args[4]
+
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(10, 10, 10, 10)
+    print(r1)
+
+    r1.update(89)
+    print(r1)
+
+    r1.update(89, 2)
+    print(r1)
+
+    r1.update(89, 2, 3)
+    print(r1)
+
+    r1.update(89, 2, 3, 4)
+    print(r1)
+
+    r1.update(89, 2, 3, 4, 5)
+    print(r1)
