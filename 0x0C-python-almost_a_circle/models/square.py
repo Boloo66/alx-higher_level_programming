@@ -42,3 +42,11 @@ class Square(Rectangle):
                     raise TypeError(msg.format(len(attrs), len(args)))
 
                 setattr(self, k, kwargs.get(k))
+
+    def to_dictionary(self):
+        return {
+            "id": self.id,
+            "size": self.width,
+            "x": self.x,
+            "y": self.y
+        }
