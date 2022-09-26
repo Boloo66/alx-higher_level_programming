@@ -8,15 +8,14 @@ import urllib.request
 import urllib.parse
 import sys
 
-mail = sys.argv[2]
-url = sys.argv[1]
-
-value = {'email':mail}
-data = urllib.parse.urlencode(value)
-data = data.encode('ascii')
-res = urllib.request.Request(url, data)
-
 if __name__ == "__main__":
+    mail = sys.argv[2]
+    url = sys.argv[1]
+
+    value = {'email': mail}
+    data = urllib.parse.urlencode(value)
+    data = data.encode('ascii')
+    res = urllib.request.Request(url, data)
 
     with urllib.request.urlopen(res) as e_content:
         content = e_content.read()
